@@ -1,6 +1,14 @@
 #include <iostream>
 #include <vector>
+#include "bubblesort.h"
 
-std::size_t partition(std::vector<int>& array, std::size_t pivot, std::size_t left, std::size_t right);
+using namespace std;
 
-void quicksort(std::vector<int>& array, std::size_t left, std::size_t right) ;
+/* Declaration des fonctions */
+void QuichSortSeuil(vector<int> &array, int left, int right);
+
+void QuichSortPivotFirst(vector<int> &array, int left, int right);
+
+void QuickSortRandomSeuil(std::vector<int> &array, int left, int right);
+
+void QuickSortRandom(std::vector<int> &array, int left, int right);

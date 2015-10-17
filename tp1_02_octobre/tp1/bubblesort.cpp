@@ -1,23 +1,23 @@
-#include "bubblesort.h"
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include "bubblesort.h"
 
 using namespace std;
 
-std::vector<int> bubbleSort(std::vector<int> vec) {
-  int sorted ;
+void BubbleSort(vector<int> &values, int start, int size) {
 
-  while (sorted != 0) {
-    sorted = 0;
-    for (std::vector<int>::iterator i = vec.begin(); i != vec.end(); i++) {
-      if (i + 1 != vec.end()) {
-        if (*i > *(i + 1)) {
-          iter_swap(i, i + 1);
-          sorted += 1;
-        }
+  bool swapped;
+  int temp;
+  do {
+    swapped = false;
+    for (int i = start; i < size - 1; i++) {
+      // Si la paire n'est pas ordonnee
+      if (values[i] > values[i + 1]) {
+        // On interchange les valeurs
+        swap(values[i], values[i + 1]);
+        swapped = true;
       }
     }
-  }
-  return vec;
+  } while (swapped);
 }
